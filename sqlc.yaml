@@ -1,0 +1,15 @@
+version: "1"
+project:
+    id: ""
+packages:
+  - name: "db" # name of the go package 
+    path: "./db/sqlc" 
+    queries: "./db/query"
+    schema: "./db/migration"  # schema or migration folder
+    engine: "postgresql" # tell sqlc what engine we're using
+    emit_json_tags: true # sqlc to add json text to generated struct
+    emit_prepared_queries: false # generate code that work with generated queris
+    emit_interface: false # to generate query interfact for generate package to mock db for testing higher level function 
+    emit_exact_table_names: false # singulazise table name to use as modal struct name
+
+#accounts table - account struct  when false
